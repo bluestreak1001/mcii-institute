@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maritime Credential Integrity Group LLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#1B2F5E;
+  --navy-dark:#0F1E3D;
+  --gold:#B8973A;
+  --gold-light:#D4AF5A;
+  --cream:#F8F6F1;
+  --white:#FFFFFF;
+  --text-dark:#1A1A2E;
+  --text-mid:#3D4A6B;
+  --text-muted:#6B7280;
+}
+body{font-family:'Source Sans 3',sans-serif;background:var(--cream);color:var(--text-dark);}
+
+nav{background:var(--navy-dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;border-bottom:2px solid var(--gold);}
+.nav-brand{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.3rem;letter-spacing:0.08em;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:#B8C4D8;text-decoration:none;font-size:0.85rem;letter-spacing:0.06em;text-transform:uppercase;cursor:default;}
+.nav-links a:hover{color:var(--gold-light);}
+
+.hero{background:var(--navy);position:relative;overflow:hidden;padding:4rem 2rem 3rem;text-align:center;border-bottom:3px solid var(--gold);}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 0%,rgba(184,151,58,0.10) 0%,transparent 70%);}
+.hero-monogram{font-family:'Playfair Display',serif;font-size:6rem;font-weight:700;color:var(--white);letter-spacing:0.12em;line-height:1;position:relative;}
+.hero-monogram span{color:var(--gold);}
+.hero-rule{width:80px;height:2px;background:var(--gold);margin:1.2rem auto;}
+.hero-org{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--white);letter-spacing:0.04em;margin-bottom:0.4rem;}
+.hero-sub{font-size:0.9rem;color:#8FA3C8;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2rem;}
+.hero-tagline{font-size:1.05rem;color:#C8D4E8;max-width:600px;margin:0 auto 2.5rem;line-height:1.7;}
+.hero-badges{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.badge{border:1px solid rgba(184,151,58,0.5);color:var(--gold-light);font-size:0.75rem;padding:0.35rem 0.9rem;letter-spacing:0.08em;text-transform:uppercase;}
+
+.rope-divider{height:8px;background:repeating-linear-gradient(90deg,var(--gold) 0px,var(--gold) 6px,var(--navy-dark) 6px,var(--navy-dark) 12px);opacity:0.6;}
+
+.section{padding:3.5rem 2rem;}
+.section-inner{max-width:860px;margin:0 auto;}
+.section-eyebrow{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--navy);margin-bottom:1.2rem;line-height:1.3;}
+.section-body{font-size:1rem;line-height:1.8;color:var(--text-mid);max-width:720px;}
+
+.pillars{background:var(--navy-dark);padding:3.5rem 2rem;}
+.pillars-inner{max-width:860px;margin:0 auto;}
+.pillars-eyebrow{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
+.pillars-title{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--white);margin-bottom:2rem;line-height:1.3;}
+.pillars-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;}
+.pillar{border:1px solid rgba(184,151,58,0.3);padding:1.5rem;background:rgba(255,255,255,0.03);}
+.pillar-icon{font-size:1.6rem;margin-bottom:0.8rem;}
+.pillar-title{font-family:'Playfair Display',serif;color:var(--gold-light);font-size:1.05rem;margin-bottom:0.5rem;}
+.pillar-text{font-size:0.88rem;color:#9BAFC8;line-height:1.7;}
+
+.about-strip{background:var(--cream);padding:3.5rem 2rem;border-top:1px solid #D4C9A8;}
+.about-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+.about-stat{text-align:center;border:1px solid #D4C9A8;padding:1.5rem;}
+.stat-number{font-family:'Playfair Display',serif;font-size:2.8rem;color:var(--navy);font-weight:700;}
+.stat-label{font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-top:0.3rem;}
+
+.contact{background:var(--navy);padding:3.5rem 2rem;text-align:center;border-top:3px solid var(--gold);}
+.contact-title{font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--white);margin-bottom:0.6rem;}
+.contact-sub{color:#8FA3C8;font-size:0.95rem;margin-bottom:1.8rem;line-height:1.6;}
+.contact-email{display:inline-block;border:1px solid var(--gold);color:var(--gold-light);padding:0.65rem 2rem;font-size:0.9rem;letter-spacing:0.06em;text-decoration:none;}
+.contact-email:hover{background:rgba(184,151,58,0.1);}
+
+footer{background:var(--navy-dark);border-top:1px solid rgba(184,151,58,0.2);padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
+.footer-brand{font-family:'Playfair Display',serif;color:var(--gold);font-size:0.95rem;}
+.footer-legal{font-size:0.75rem;color:#4A5880;letter-spacing:0.04em;}
+
+@media(max-width:600px){
+  .hero-monogram{font-size:4rem;}
+  .about-inner{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+  footer{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">MCII</span>
+  <ul class="nav-links">
+    <li><a>Mission</a></li>
+    <li><a>Focus Areas</a></li>
+    <li><a>Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-monogram">MC<span>II</span></div>
+  <div class="hero-rule"></div>
+  <div class="hero-org">Maritime Credential Integrity Group LLC</div>
+  <div class="hero-sub">Restoring Accountability to Maritime Credential Verification</div>
+  <p class="hero-tagline">Identifying and addressing systemic gaps in federal maritime credentialing and drug testing oversight — through documentation, research, and policy engagement.</p>
+  <div class="hero-badges">
+    <span class="badge">New York LLC · Est. 2026</span>
+    <span class="badge">Suffolk County, NY</span>
+    <span class="badge">Federal Regulatory Research</span>
+  </div>
+</section>
+
+<div class="rope-divider"></div>
+
+<section class="section" id="mission">
+  <div class="section-inner">
+    <div class="section-eyebrow">Our Mission</div>
+    <h2 class="section-title">Accountability Where It Has Been Absent</h2>
+    <p class="section-body">The commercial maritime industry operates under a federal credentialing framework administered by the United States Coast Guard National Maritime Center. While that framework establishes rigorous standards for mariner licensing, a significant gap exists in the verification and enforcement of drug and alcohol testing compliance — particularly across third-party consortium administrators.</p>
+    <br>
+    <p class="section-body">Maritime Credential Integrity Group LLC was founded to document this gap through independent research, evidence-based analysis, and formal engagement with the agencies responsible for mariner safety. Our work is grounded in verified facts, not adversarial posturing. The record speaks for itself.</p>
+  </div>
+</section>
+
+<section class="pillars" id="focus">
+  <div class="pillars-inner">
+    <div class="pillars-eyebrow">Focus Areas</div>
+    <h2 class="pillars-title">Where We Direct Our Work</h2>
+    <div class="pillars-grid">
+      <div class="pillar">
+        <div class="pillar-icon">⚓</div>
+        <div class="pillar-title">Credential Integrity</div>
+        <p class="pillar-text">Examining how Merchant Mariner Credentials are enrolled, tracked, and maintained across third-party testing administrators and federal databases.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🧭</div>
+        <div class="pillar-title">Regulatory Gap Analysis</div>
+        <p class="pillar-text">Identifying the absence of a centralized national drug testing clearinghouse equivalent for maritime — analogous to the FMCSA Clearinghouse for commercial trucking.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">📋</div>
+        <div class="pillar-title">Documentation & Research</div>
+        <p class="pillar-text">Building an evidence record through FOIA requests, incident documentation, and cross-referencing publicly available federal reporting data.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🏛️</div>
+        <div class="pillar-title">Policy Engagement</div>
+        <p class="pillar-text">Formal engagement with USCG, NMC, and relevant Congressional oversight channels to advance structural reform through proper institutional channels.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-strip">
+  <div class="about-inner">
+    <div>
+      <div class="section-eyebrow">About the Organization</div>
+      <h2 class="section-title" style="font-size:1.5rem;">Founded by a Credentialed Mariner and Former Law Enforcement Professional</h2>
+      <p class="section-body" style="font-size:0.93rem;">MCII was established by a retired NYPD Lieutenant with over 21 years of service and an active USCG Merchant Mariner Credential. The organization's work draws on direct experience with both the maritime credentialing system and large-scale cross-database statistical analysis developed during law enforcement service.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      <div class="about-stat">
+        <div class="stat-number">21+</div>
+        <div class="stat-label">Years Law Enforcement</div>
+      </div>
+      <div class="about-stat">
+        <div class="stat-number">MMC</div>
+        <div class="stat-label">Active USCG Credential</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-title">Contact MCII</div>
+  <p class="contact-sub">For inquiries, please reach out directly.</p>
+  <a href="mailto:mcii.institute@gmail.com" class="contact-email">mcii.institute@gmail.com</a>
+</section>
+
+<footer>
+  <span class="footer-brand">Maritime Credential Integrity Group LLC</span>
+  <span class="footer-legal">© 2026 MCII · Suffolk County, New York · DOS ID: DOS1336-2026-030778</span>
+</footer>
+
+</body>
+</html>
